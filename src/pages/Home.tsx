@@ -624,7 +624,7 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px 80px', maxWidth: '800px', margin: '0 auto 56px' }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-[80px] md:gap-y-[48px] max-w-[800px] mx-auto mb-14"
           >
             
             {/* Capital */}
@@ -785,7 +785,7 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '40px', marginBottom: '64px' }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16"
           >
             {[
               {
@@ -893,7 +893,7 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px' }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16"
           >
             {[
               {

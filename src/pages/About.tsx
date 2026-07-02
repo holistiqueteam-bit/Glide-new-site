@@ -131,10 +131,10 @@ export default function About() {
       </section>
 
       {/* Founders Deep Dive Section */}
-      <section className="bg-brand-navy py-32 text-center text-white">
+      <section className="bg-brand-navy pt-4 md:pt-16 pb-20 md:pb-32 text-center text-white">
         <div className="mx-auto max-w-6xl px-6">
            <p className="text-gray-400 font-bold tracking-widest text-xs uppercase mb-6">OUR FOUNDERS</p>
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight mb-4 uppercase">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight mb-4 uppercase">
                INDIA SCALES FAST.<br/>
                WE SCALE FASTER.
             </h2>

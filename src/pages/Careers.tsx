@@ -18,7 +18,7 @@ export default function Careers() {
     <div className="bg-[#f4f5f7] min-h-screen overflow-x-hidden font-sans">
       
       {/* Hero Section */}
-      <section className="bg-brand-navy pt-28 pb-16 text-center text-white relative z-10 px-6">
+      <section className="bg-brand-navy pt-4 md:pt-20 pb-4 md:pb-12 text-center text-white relative z-10 px-6">
         <div className="max-w-6xl mx-auto w-full">
           {/* Static Header and Subtitle */}
           <motion.div
@@ -36,7 +36,7 @@ export default function Careers() {
           </motion.div>
 
           {/* Infinite Horizontal Scrolling Marquee */}
-          <div className="careers-marquee-container mt-14 mb-8">
+          <div className="careers-marquee-container mt-6 md:mt-14 mb-4 md:mb-8">
             <div className="careers-marquee-track">
               {marqueeImages.map((src, idx) => (
                 <div key={idx} className="careers-marquee-card overflow-hidden">
@@ -53,15 +53,15 @@ export default function Careers() {
       </section>
 
       {/* "WHO THRIVES AT GLIDE" Section */}
-      <section className="bg-white py-24 px-6 relative z-10 border-b border-gray-100">
+      <section className="bg-white py-12 md:py-24 px-6 relative z-10 border-b border-gray-100">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-10 md:mb-20">
             <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl text-brand-navy tracking-tight uppercase leading-none">
               WHO THRIVES AT GLIDE
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 md:gap-y-16">
             
             {/* Ownership */}
             <div className="flex flex-col items-start">

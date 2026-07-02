@@ -490,14 +490,14 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="flex flex-col md:flex-row justify-center items-center md:items-start gap-12 md:gap-[96px]"
+            className="flex flex-col md:flex-row justify-center items-stretch md:items-start gap-12 md:gap-[96px]"
           >
             {capabilities.slice(3, 5).map((cap, i) => (
               <motion.div 
                 key={i} 
                 variants={fadeInUp}
                 whileHover="hover"
-                className="flex flex-col max-w-[280px] w-full cursor-default"
+                className="flex flex-col max-w-none md:max-w-[280px] w-full cursor-default"
               >
                 <motion.div variants={cardHover} style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                   <div style={{ marginBottom: '16px' }}>{cap.icon}</div>

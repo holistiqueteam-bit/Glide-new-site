@@ -148,7 +148,7 @@ export default function BrandPartners() {
       </section>
 
       {/* Partners List - Mockup aligned layout */}
-      <section className="pt-40 pb-32 px-6 max-w-4xl mx-auto">
+      <section className="pt-0 md:pt-40 pb-0 md:pb-32 px-6 max-w-4xl mx-auto">
         <motion.div 
           className="flex flex-col gap-20"
           initial="hidden"

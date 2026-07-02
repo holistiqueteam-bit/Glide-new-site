@@ -522,12 +522,12 @@ export default function Home() {
       {/* ══════════════════════════════════════════════
           BRANDS WE REPRESENT SECTION
       ══════════════════════════════════════════════ */}
-      <section style={{ backgroundColor: '#191E4E', padding: '80px 0', color: 'white' }}>
-        <div style={{ maxWidth: '1300px', margin: '0 auto', padding: '0 48px' }}>
-          <div style={{ display: 'flex', gap: '48px', alignItems: 'stretch' }}>
+      <section style={{ backgroundColor: '#191E4E', padding: '60px 0', color: 'white' }}>
+        <div className="max-w-[1300px] mx-auto px-6 md:px-12">
+          <div className="flex flex-col md:flex-row gap-10 md:gap-12 items-stretch">
 
             {/* Left column */}
-            <div style={{ flexShrink: 0, width: '300px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div className="w-full md:w-[300px] flex-shrink-0 flex flex-col justify-between mb-6 md:mb-0">
               <div>
                 <h2 style={{
                   fontSize: 'clamp(28px, 3.5vw, 44px)',
@@ -542,7 +542,7 @@ export default function Home() {
               </div>
               <p style={{
                 color: '#FDB614', fontSize: '13px', fontWeight: 600,
-                lineHeight: 1.7, marginTop: '40px'
+                lineHeight: 1.7, marginTop: '24px'
               }}>
                 Different categories, different stages.<br />
                 Same operating principles.
@@ -552,20 +552,17 @@ export default function Home() {
             {/* Right scrollable cards */}
             <div
               ref={scrollRef}
-              className="scrollbar-hide"
+              className="scrollbar-hide w-full flex gap-5 overflow-x-auto pb-4 scroll-smooth"
               style={{
-                display: 'flex', gap: '20px', overflowX: 'auto',
-                paddingBottom: '8px', flex: 1, scrollSnapType: 'x mandatory'
+                flex: 1, scrollSnapType: 'x mandatory'
               }}
             >
               {brandCards.map((card, i) => (
-                <div key={i} style={{
-                  width: '260px', flexShrink: 0,
-                  backgroundColor: 'white', color: '#191E4E',
-                  padding: '28px', borderRadius: '12px',
-                  display: 'flex', flexDirection: 'column',
-                  minHeight: '280px', scrollSnapAlign: 'start'
-                }}>
+                <div 
+                  key={i} 
+                  className="w-[calc(100vw-48px)] md:w-[260px] shrink-0 bg-white text-[#191E4E] p-7 rounded-xl flex flex-col min-h-[260px]"
+                  style={{ scrollSnapAlign: 'start' }}
+                >
                   <p style={{
                     fontSize: '9px', color: '#aaa', fontWeight: 800,
                     letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '16px'

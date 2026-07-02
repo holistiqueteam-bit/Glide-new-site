@@ -84,7 +84,7 @@ const slides = [
     type: "glide-capital",
     title: (
       <>
-        WE DON'T ADVISE FROM<br />THE OUTSIDE.
+        WE DON'T<br />ADVISE FROM<br />THE OUTSIDE.
       </>
     ),
     subtitle: "IF YOU'RE BUILDING A BRAND FOR INDIA'S NEXT DECADE, LET'S TALK.",
@@ -228,15 +228,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════════
           HERO SECTION
       ══════════════════════════════════════════════ */}
-      <section style={{ 
-        backgroundColor: '#ffffff',
-        padding: '60px 24px 80px',
-        textAlign: 'center',
-        minHeight: '700px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}>
+      <section className="bg-white px-6 py-10 md:py-16 text-center min-h-[550px] md:min-h-[700px] flex items-center justify-center">
         <div style={{ maxWidth: '900px', width: '100%', margin: '0 auto' }}>
           <AnimatePresence mode="wait">
             <motion.div
@@ -266,32 +258,31 @@ export default function Home() {
               {slides[currentSlide].type === 'main' && (
                 <>
                   <h1 style={{
-                    fontSize: 'clamp(32px, 6vw, 64px)',
+                    fontSize: 'clamp(20px, 5.5vw, 64px)',
                     fontWeight: 500,
                     color: '#191E4E',
                     lineHeight: 1.1,
                     textTransform: 'uppercase',
                     letterSpacing: '-0.01em',
-                    marginBottom: '40px',
+                    marginBottom: '28px',
                     fontFamily: "'Montserrat', sans-serif"
                   }}>
                     {slides[currentSlide].title}
                   </h1>
 
                   {/* Three circles */}
-                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px', marginBottom: '32px' }}>
+                  <div className="flex justify-center items-center gap-3 md:gap-5 mb-8">
                     {slides[currentSlide].images!.map((img, idx) => (
-                      <div key={idx} style={{
-                        width: idx === 1 ? '160px' : '145px',
-                        height: idx === 1 ? '160px' : '145px',
-                        borderRadius: '50%',
-                        overflow: 'hidden',
-                        flexShrink: 0,
-                        backgroundColor: img.type === 'teal' ? '#00B5B7' : '#eee',
-                        boxShadow: '0 4px 20px rgba(0,0,0,0.1)'
-                      }}>
+                      <div 
+                        key={idx} 
+                        className={
+                          idx === 1 
+                            ? "w-24 h-24 sm:w-32 md:w-[160px] md:h-[160px] rounded-full overflow-hidden flex-shrink-0 bg-brand-teal shadow-lg"
+                            : "w-[75px] h-[75px] sm:w-[105px] md:w-[145px] md:h-[145px] rounded-full overflow-hidden flex-shrink-0 bg-gray-200 shadow-lg"
+                        }
+                      >
                         {img.type === 'image' && (
-                          <img src={img.url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                          <img src={img.url} alt="" className="w-full h-full object-cover" />
                         )}
                       </div>
                     ))}
@@ -308,7 +299,7 @@ export default function Home() {
                 <>
                   <div style={{ marginBottom: '8px', textAlign: 'center' }}>
                     <span style={{
-                      fontSize: 'clamp(80px, 12vw, 140px)',
+                      fontSize: 'clamp(60px, 12vw, 140px)',
                       fontWeight: 900,
                       color: '#00B5B7',
                       lineHeight: 1,
@@ -327,18 +318,14 @@ export default function Home() {
                   </div>
 
                   {/* Capsule image */}
-                  <div style={{
-                    width: '380px', height: '180px', borderRadius: '100px',
-                    overflow: 'hidden', position: 'relative', margin: '0 auto 32px',
-                    boxShadow: '0 4px 20px rgba(0,0,0,0.1)'
-                  }}>
+                  <div className="w-full max-w-[280px] md:max-w-[380px] h-[130px] md:h-[180px] rounded-[100px] overflow-hidden relative mx-auto mb-8 shadow-lg">
                     <div style={{
                       position: 'absolute', top: '50%', left: 0,
                       transform: 'translate(-20%, -50%)',
                       width: '55%', paddingBottom: '55%',
                       borderRadius: '50%', backgroundColor: '#191E4E', zIndex: 1, opacity: 0.9
                     }} />
-                    <img src={slides[currentSlide].imageUrl} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={slides[currentSlide].imageUrl} alt="" className="w-full h-full object-cover" />
                   </div>
 
                   <p style={{ color: '#666', fontSize: '14px', fontWeight: 500, marginBottom: '28px' }}>
@@ -351,25 +338,25 @@ export default function Home() {
               {slides[currentSlide].type === 'glide-capital' && (
                 <>
                   <h1 style={{
-                    fontSize: 'clamp(28px, 5vw, 56px)',
+                    fontSize: 'clamp(18px, 5vw, 56px)',
                     fontWeight: 500,
                     color: '#191E4E',
                     lineHeight: 1.1,
                     textTransform: 'uppercase',
                     letterSpacing: '-0.01em',
-                    marginBottom: '32px',
+                    marginBottom: '28px',
                     fontFamily: "'Montserrat', sans-serif"
                   }}>
                     {slides[currentSlide].title}
                   </h1>
 
-                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '40px', marginBottom: '32px', flexWrap: 'wrap' }}>
-                    <div style={{ width: '320px', height: '155px', borderRadius: '100px', overflow: 'hidden', position: 'relative', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}>
+                  <div className="flex justify-center items-center gap-5 md:gap-10 mb-8 flex-wrap">
+                    <div className="w-full max-w-[220px] md:max-w-[320px] h-[110px] md:h-[155px] rounded-[100px] overflow-hidden relative shadow-lg">
                       <div style={{ position: 'absolute', top: '50%', right: 0, transform: 'translate(20%, -50%)', width: '55%', paddingBottom: '55%', borderRadius: '50%', backgroundColor: '#00B5B7', zIndex: 1, opacity: 0.9 }} />
-                      <img src={slides[currentSlide].leftImageUrl} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src={slides[currentSlide].leftImageUrl} alt="" className="w-full h-full object-cover" />
                     </div>
-                    <div style={{ width: '140px', height: '140px', borderRadius: '50%', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}>
-                      <img src={slides[currentSlide].rightImageUrl} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <div className="w-24 h-24 md:w-[140px] md:h-[140px] rounded-full overflow-hidden shadow-lg">
+                      <img src={slides[currentSlide].rightImageUrl} alt="" className="w-full h-full object-cover" />
                     </div>
                   </div>
 

@@ -148,9 +148,9 @@ export default function BrandPartners() {
       </section>
 
       {/* Partners List - Mockup aligned layout */}
-      <section className="pt-0 md:pt-40 pb-0 md:pb-32 px-6 max-w-4xl mx-auto">
+      <section className="pt-8 md:pt-40 pb-8 md:pb-32 px-6 max-w-4xl mx-auto">
         <motion.div 
-          className="flex flex-col gap-20"
+          className="flex flex-col gap-10 md:gap-20"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -167,7 +167,7 @@ export default function BrandPartners() {
                  <div className="aspect-[16/10] w-full bg-gray-50 rounded-xl overflow-hidden mb-4 shadow-sm border border-gray-100">
                    <img src={partner.image} alt={partner.id} className="w-full h-full object-cover" />
                  </div>
-                 <div className="mb-2 flex items-center min-h-[48px]">
+                 <div className="mb-1 md:mb-2 flex items-center min-h-[36px] md:min-h-[48px]">
                    {partner.logo}
                  </div>
                </div>

@@ -19,7 +19,7 @@ export function Footer() {
         <div className="mb-10">
 
           {/* Logo - left aligned, no background */}
-          <Link to="/" className="inline-block mb-8">
+          <Link to="/" className="inline-block mb-4 md:mb-8">
             <img
               src="/glide-logo.png"
               alt="Glide Brands"

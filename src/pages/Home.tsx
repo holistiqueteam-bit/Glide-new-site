@@ -457,7 +457,7 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '48px 64px', marginBottom: '56px' }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-x-16 md:gap-y-12 mb-12 md:mb-14"
           >
             {capabilities.slice(0, 3).map((cap, i) => (
               <motion.div 
@@ -490,14 +490,14 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            style={{ display: 'flex', justifyContent: 'center', gap: '96px' }}
+            className="flex flex-col md:flex-row justify-center items-center md:items-start gap-12 md:gap-[96px]"
           >
             {capabilities.slice(3, 5).map((cap, i) => (
               <motion.div 
                 key={i} 
                 variants={fadeInUp}
                 whileHover="hover"
-                style={{ display: 'flex', flexDirection: 'column', maxWidth: '280px', cursor: 'default' }}
+                className="flex flex-col max-w-[280px] w-full cursor-default"
               >
                 <motion.div variants={cardHover} style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                   <div style={{ marginBottom: '16px' }}>{cap.icon}</div>

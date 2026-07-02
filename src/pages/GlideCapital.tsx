@@ -118,7 +118,7 @@ export default function GlideCapital() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[52px] font-extralight text-[#191E4E] tracking-[0.05em] md:tracking-[0.08em] leading-[1.25] uppercase select-none">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[52px] font-medium text-[#191E4E] tracking-[0.05em] md:tracking-[0.08em] leading-[1.25] uppercase select-none">
                   {slides[currentSlide].title}
                 </h1>
                 {slides[currentSlide].description && (

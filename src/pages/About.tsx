@@ -21,7 +21,7 @@ export default function About() {
     <div className="bg-white overflow-x-hidden font-sans">
       
       {/* Hero Section */}
-      <section className="pt-24 pb-48 text-center px-6 relative z-10">
+      <section className="pt-4 md:pt-16 pb-12 md:pb-20 text-center px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <motion.p 
             className="text-brand-teal font-bold tracking-widest text-xs mb-8 uppercase"
@@ -33,16 +33,15 @@ export default function About() {
           </motion.p>
           
           <motion.h1 
-            className="text-4xl md:text-6xl lg:text-[4.8rem] font-bold text-brand-navy leading-[1.1] mb-12 uppercase tracking-tight"
+            className="text-xl sm:text-3xl md:text-6xl lg:text-[4.8rem] font-bold text-brand-navy leading-[1.1] mb-12 uppercase tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="text-brand-yellow">GLIDE</span> WAS BORN TO<br/>
-            OPERATE AT THE<br/>
-            INTERSECTION OF <span className="text-brand-yellow">GLOBAL<br/>
-            AMBITION</span> AND <span className="text-brand-yellow">INDIAN<br/>
-            REALITY</span>.
+            <span className="text-brand-yellow">GLIDE</span> WAS BORN TO OPERATE<br/>
+            AT THE INTERSECTION OF<br/>
+            <span className="text-brand-yellow">GLOBAL AMBITION</span><br/>
+            AND <span className="text-brand-yellow">INDIAN REALITY</span>.
           </motion.h1>
           
           <motion.div 

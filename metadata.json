@@ -1,0 +1,6 @@
+{
+  "name": "Glide Brands",
+  "description": "An elegant platform for operating brand owners, capital management, and brand partnerships.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

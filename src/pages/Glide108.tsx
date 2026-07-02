@@ -149,7 +149,7 @@ export default function Glide108() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="pt-28 pb-20 overflow-hidden">
+      <section className="pt-4 md:pt-20 pb-4 md:pb-12 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center min-h-[540px]">
 
           {/* Left — Text */}
@@ -176,9 +176,9 @@ export default function Glide108() {
 
           {/* Right — Planetary Orbit */}
           <motion.div
-            className="flex justify-center items-center py-10"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            className="flex justify-center items-center py-4 md:py-10 scale-[0.62] sm:scale-75 md:scale-100 origin-center h-[320px] md:h-[500px] w-full"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           >
             <OrbitSection />
@@ -188,7 +188,7 @@ export default function Glide108() {
 
         {/* Supervised AI OS Statement */}
         <motion.div
-          className="max-w-4xl mx-auto text-center mt-16 mb-8 px-6"
+          className="max-w-4xl mx-auto text-center mt-6 md:mt-16 mb-4 md:mb-8 px-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
@@ -208,8 +208,8 @@ export default function Glide108() {
         <div
           className="bg-[#F4F6F6] px-6 pb-20 pt-16 mx-auto"
           style={{
-            borderTopLeftRadius: '50% 400px',
-            borderTopRightRadius: '50% 400px',
+            borderTopLeftRadius: '50% 190px',
+            borderTopRightRadius: '50% 190px',
             maxWidth: '100%',
           }}
         >

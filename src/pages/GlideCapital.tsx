@@ -352,11 +352,10 @@ export default function GlideCapital() {
             </motion.span>
             
             <motion.h2 
-              className="text-2xl sm:text-3xl lg:text-[38px] font-medium text-[#191E4E] tracking-wide leading-[1.25] uppercase mb-6" 
+              className="text-xl sm:text-2xl lg:text-[30px] font-medium text-[#191E4E] tracking-wide leading-[1.25] uppercase mb-6" 
               variants={fadeInUp}
             >
-              UNLIKE A TYPICAL<br />
-              VC FUND,<br />
+              UNLIKE A TYPICAL VC FUND,<br />
               WE ARE BRAND OPERATORS<br />
               WITH CAPITAL.
             </motion.h2>

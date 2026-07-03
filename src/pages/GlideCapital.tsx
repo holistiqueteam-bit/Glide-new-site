@@ -136,17 +136,9 @@ export default function GlideCapital() {
             {/* Bottom Left: Collage & Controls */}
             <div className="flex flex-col items-start gap-4">
               <div className="relative flex items-center pt-6 pl-5">
-                {/* Dark Navy Background Circle */}
-                <motion.div 
-                  className="absolute left-0 top-0 w-[120px] h-[120px] md:w-[150px] md:h-[150px] rounded-full bg-[#033C57] z-0"
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ type: "spring", stiffness: 60, damping: 15, delay: 0.3 }}
-                />
-                
                 {/* Custom Image */}
                 <motion.div 
-                  className="relative w-[230px] h-[115px] md:w-[300px] md:h-[150px] rounded-[24px_90px_90px_24px] overflow-hidden border-2 border-white shadow-xl z-10 bg-slate-200 cursor-pointer"
+                  className="relative w-full max-w-[280px] md:max-w-[360px] cursor-pointer"
                   initial={{ x: -50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
@@ -155,7 +147,7 @@ export default function GlideCapital() {
                   <img 
                     src="/glide-capital-banner.png" 
                     alt="Glide Capital Banner" 
-                    className="w-full h-full object-cover filter grayscale contrast-[1.1] brightness-[0.95]"
+                    className="w-full h-auto object-contain"
                   />
                 </motion.div>
               </div>

@@ -101,7 +101,7 @@ export function Footer() {
           {/* LinkedIn Icon */}
           <div className="flex justify-start md:justify-end items-start pt-2 md:pt-0">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/glide-brands/?viewAsMember=true"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"

@@ -21,3 +21,7 @@ Every time a new session starts, the agent must automatically perform the follow
 # Project Configurations & Secrets
 
 Please refer to the gitignored secrets file: [.agents/secrets.md](file:///c:/Users/Prajwal/Downloads/glide-brands/.agents/secrets.md) for GitHub repository credentials, auth tokens, and default push instructions.
+
+# Git Push Policy
+- The agent must automatically stage, commit, and push code changes to the remote repository immediately after completing any layout edits, code changes, or asset additions, without asking the user for confirmation in the chat thread.
+

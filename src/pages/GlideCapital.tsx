@@ -336,7 +336,7 @@ export default function GlideCapital() {
       <section className="w-full grid grid-cols-1 lg:grid-cols-2 bg-white overflow-hidden min-h-[600px] relative z-10 border-b border-gray-100">
         
         {/* Left Content Column */}
-        <div className="bg-[#F4F6F6] flex flex-col justify-center py-20 px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32 text-left w-full h-full">
+        <div className="bg-[#F4F6F6] flex flex-col justify-center py-12 md:py-20 px-6 sm:px-10 md:px-12 lg:px-16 xl:px-20 text-left w-full h-full">
           <motion.div 
             className="max-w-xl flex flex-col"
             initial="hidden"
@@ -355,7 +355,9 @@ export default function GlideCapital() {
               className="text-2xl sm:text-3xl lg:text-[38px] font-medium text-[#191E4E] tracking-wide leading-[1.25] uppercase mb-8" 
               variants={fadeInUp}
             >
-              UNLIKE A TYPICAL VC FUND, WE ARE BRAND OPERATORS WITH CAPITAL.
+              UNLIKE A TYPICAL VC FUND,<br />
+              WE ARE BRAND OPERATORS<br />
+              WITH CAPITAL.
             </motion.h2>
             
             <motion.div 

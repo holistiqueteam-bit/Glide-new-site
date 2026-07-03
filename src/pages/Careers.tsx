@@ -166,6 +166,15 @@ export default function Careers() {
             <p>
               The work is demanding because the opportunity is meaningful. If you're excited by ownership, complexity and building things that last, you'll fit right in.
             </p>
+            <p className="pt-4 text-[#FDB614] font-bold text-xs sm:text-sm tracking-wide">
+              Join the Glide Brands team! Send your CV to{' '}
+              <a 
+                href="mailto:careers@glidebrands.in" 
+                className="underline text-white hover:text-[#00B5B7] transition-colors"
+              >
+                careers@glidebrands.in
+              </a>
+            </p>
           </div>
         </div>
 

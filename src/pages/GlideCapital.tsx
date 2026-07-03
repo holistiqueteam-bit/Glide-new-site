@@ -135,7 +135,7 @@ export default function GlideCapital() {
             
             {/* Bottom Left: Collage & Controls */}
             <div className="flex flex-col items-start gap-4">
-              <div className="relative flex items-center pt-6 pl-5">
+              <div className="relative flex items-center -mt-6 md:-mt-14 pl-5">
                 {/* Custom Image */}
                 <motion.div 
                   className="relative w-full max-w-[280px] md:max-w-[360px] cursor-pointer"

@@ -74,7 +74,7 @@ const slides = [
     type: "glide-108",
     topLabel: "GLIDE 108",
     titleBig: "108",
-    titleSub: "Is More Than Just a Number.",
+    titleSub: "Is More Than Just a Number",
     subtitle: "We turn India's complexity into your competitive advantage.",
     buttonText: "GLIDE 108",
     buttonLink: "/glide-108",
@@ -84,7 +84,7 @@ const slides = [
     type: "glide-capital",
     title: (
       <>
-        WE DON'T<br />ADVISE FROM<br />THE OUTSIDE.
+        WE DON'T<br />ADVISE FROM<br />THE OUTSIDE
       </>
     ),
     subtitle: "IF YOU'RE BUILDING A BRAND FOR INDIA'S NEXT DECADE, LET'S TALK.",
@@ -314,7 +314,7 @@ export default function Home() {
                       textTransform: 'uppercase',
                       display: 'block',
                       marginBottom: '24px'
-                    }}>Is More Than Just a Number.</span>
+                    }}>Is More Than Just a Number</span>
                   </div>
 
                   {/* Capsule image */}
@@ -440,7 +440,7 @@ export default function Home() {
             </span>
             <div style={{ lineHeight: 1.1, textTransform: 'uppercase' }}>
               <div style={{ fontSize: 'clamp(32px, 5vw, 64px)', fontWeight: 500, color: '#ccc', letterSpacing: '-0.01em' }}>
-                ONE PARTNER.
+                ONE PARTNER
               </div>
               <div style={{ fontSize: 'clamp(32px, 5vw, 64px)', fontWeight: 500, color: '#191E4E', letterSpacing: '-0.01em' }}>
                 EVERY CAPABILITY
@@ -536,7 +536,7 @@ export default function Home() {
                   color: 'white', marginBottom: '20px',
                   fontFamily: "'Montserrat', sans-serif"
                 }}>
-                  BRANDS WE REPRESENT.
+                  BRANDS WE REPRESENT
                 </h2>
                 <div style={{ width: '56px', height: '4px', backgroundColor: '#FDB614', borderRadius: '4px' }} />
               </div>

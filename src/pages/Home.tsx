@@ -65,9 +65,9 @@ const slides = [
     buttonText: "KNOW MORE",
     buttonLink: "/about",
     images: [
-      { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400", type: "image" },
+      { url: "/home-1.png", type: "image" },
       { type: "teal" },
-      { url: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=400", type: "image" }
+      { url: "/home-2.png", type: "image" }
     ]
   },
   {
@@ -78,7 +78,7 @@ const slides = [
     subtitle: "We turn India's complexity into your competitive advantage.",
     buttonText: "GLIDE 108",
     buttonLink: "/glide-108",
-    imageUrl: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=800"
+    imageUrl: "/home-5.png"
   },
   {
     type: "glide-capital",
@@ -90,8 +90,8 @@ const slides = [
     subtitle: "IF YOU'RE BUILDING A BRAND FOR INDIA'S NEXT DECADE, LET'S TALK.",
     buttonText: "GLIDE CAPITAL",
     buttonLink: "/glide-capital",
-    leftImageUrl: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600",
-    rightImageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"
+    leftImageUrl: "/home-3.png",
+    rightImageUrl: "/home-4.png"
   }
 ];
 
@@ -300,7 +300,7 @@ export default function Home() {
                   <div style={{ marginBottom: '8px', textAlign: 'center' }}>
                     <span style={{
                       fontSize: 'clamp(60px, 12vw, 140px)',
-                      fontWeight: 900,
+                      fontWeight: 500,
                       color: '#00B5B7',
                       lineHeight: 1,
                       display: 'block',

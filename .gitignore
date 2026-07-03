@@ -8,3 +8,4 @@ coverage/
 !.env.example
 glide-brands-project.zip
 combined_codebase.txt
+.agents/secrets.md

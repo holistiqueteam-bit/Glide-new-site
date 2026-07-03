@@ -33,7 +33,7 @@ export default function About() {
           </motion.p>
           
           <motion.h1 
-            className="text-xl sm:text-3xl md:text-6xl lg:text-[4.8rem] font-bold text-brand-navy leading-[1.1] mb-12 uppercase tracking-tight"
+            className="text-xl sm:text-3xl md:text-5xl lg:text-[3.5rem] font-bold text-brand-navy leading-[1.1] mb-12 uppercase tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}

@@ -15,3 +15,9 @@ Every time a new session starts, the agent must automatically perform the follow
    Proactively summarize the last active task and provide the user with:
    - A brief summary of the state of the project at the end of the last session.
    - A clickable markdown link to the recovered conversation history file.
+
+**CRITICAL RULE**: The agent MUST perform these auto-recovery steps on the very first turn of *every* new session, regardless of the user's initial prompt, before performing any other tasks.
+
+# Project Configurations & Secrets
+
+Please refer to the gitignored secrets file: [.agents/secrets.md](file:///c:/Users/Prajwal/Downloads/glide-brands/.agents/secrets.md) for GitHub repository credentials, auth tokens, and default push instructions.

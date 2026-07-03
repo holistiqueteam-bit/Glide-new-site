@@ -180,39 +180,6 @@ export default function GlideCapital() {
                 ))}
               </motion.div>
             </div>
-
-            {/* Bottom Right: Logo Display */}
-            <motion.div 
-              className="flex flex-col justify-center items-start md:pr-6 md:pb-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <div className="leading-none relative inline-block select-none">
-                {/* Custom Dot bottom-left of 'g' */}
-                <motion.span 
-                  className="absolute left-[3px] bottom-[-2px] w-2.5 h-2.5 rounded-full bg-brand-teal"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.9 }}
-                />
-                <span className="text-6xl md:text-7.5xl font-black text-brand-navy tracking-tighter block leading-none relative">
-                  glide
-                  {/* Custom Dot inside 'e' counter */}
-                  <motion.span 
-                    className="absolute right-[8px] top-[38%] w-2.5 h-2.5 rounded-full bg-brand-teal"
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ type: "spring", stiffness: 100, damping: 10, delay: 1.0 }}
-                  />
-                </span>
-                <div className="flex items-center gap-2 mt-4 pl-1">
-                  <span className="text-xs text-brand-navy tracking-[0.45em] font-extrabold uppercase leading-none">
-                    CAPITAL
-                  </span>
-                </div>
-              </div>
-            </motion.div>
             
           </div>
         </div>

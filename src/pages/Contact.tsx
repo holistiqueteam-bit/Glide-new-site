@@ -40,7 +40,10 @@ export default function Contact() {
     setStatus('submitting');
     
     try {
-      const response = await fetch("https://formsubmit.co/ajax/info@glidebrands.in", {
+      const formSubmitToken =
+        (import.meta as any).env?.VITE_FORMSUBMIT_TOKEN?.trim() ||
+        "6b0db0f67bacb7e5e3aa6fc5e1e8d471";
+      const response = await fetch(`https://formsubmit.co/ajax/${formSubmitToken}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

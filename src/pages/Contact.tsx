@@ -7,12 +7,13 @@ export default function Contact() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
+  const [honeypot, setHoneypot] = useState('');
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errors, setErrors] = useState<{ name?: string; email?: string; phone?: string }>({});
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Reset errors
     const newErrors: { name?: string; email?: string; phone?: string } = {};
 
@@ -36,9 +37,14 @@ export default function Contact() {
       return;
     }
 
+    // Bot honeypot: real users never fill this hidden field
+    if (honeypot.trim() !== '') {
+      return;
+    }
+
     setErrors({});
     setStatus('submitting');
-    
+
     try {
       const formSubmitToken =
         (import.meta as any).env?.VITE_FORMSUBMIT_TOKEN?.trim() ||
@@ -50,25 +56,27 @@ export default function Contact() {
           "Accept": "application/json"
         },
         body: JSON.stringify({
-          Name: name,
-          Email: email,
-          Phone: phone,
-          Message: message
+          _subject: `New Glide Brands Contact Submission from ${name.trim()}`,
+          _honey: honeypot,
+          Name: name.trim(),
+          Email: email.trim(),
+          Phone: phone.trim(),
+          Message: message.trim()
         })
       });
-      
-      if (response.ok) {
+
+      const data = await response.json().catch(() => null);
+
+      if (response.ok && data?.success !== false && data?.success !== 'false') {
         setStatus('success');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
-        // Fallback to success to guarantee user lands on thank you screen
-        setStatus('success');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        console.error("Form submission rejected:", response.status);
+        setStatus('error');
       }
     } catch (err) {
-      console.error("Submission error", err);
-      setStatus('success');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      console.error("Submission network error");
+      setStatus('error');
     }
   };
 
@@ -77,12 +85,12 @@ export default function Contact() {
     return (
       <div className="bg-brand-navy min-h-[75vh] flex flex-col items-center justify-center text-center px-6 py-12 text-white font-sans">
         <div className="max-w-2xl mx-auto flex flex-col items-center justify-center space-y-6">
-          
+
           {/* Animated Success Check Circle */}
           <div className="w-16 h-16 rounded-full bg-brand-teal/20 flex items-center justify-center text-brand-teal animate-bounce">
             <CheckCircle2 size={36} />
           </div>
-          
+
           <div className="space-y-3">
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-widest text-brand-coral uppercase leading-none">
               THANK YOU!
@@ -97,7 +105,7 @@ export default function Contact() {
           </p>
 
           <div className="pt-2">
-            <Link 
+            <Link
               to="/"
               className="rounded-full bg-brand-teal px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white transition hover:opacity-90 inline-flex items-center gap-3 shadow-lg hover:shadow-brand-teal/20"
             >
@@ -114,16 +122,16 @@ export default function Contact() {
 
   return (
     <div className="bg-white min-h-screen font-sans">
-      
+
       {/* 1. Top Banner (Hero) */}
       <section className="relative h-72 md:h-80 overflow-hidden flex items-center justify-center">
         {/* Background image overlay */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center" 
+        <div
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/contact-bg.png')" }}
         />
         <div className="absolute inset-0 bg-brand-navy/30 mix-blend-multiply" />
-        
+
         {/* Three Central Images */}
         <div className="relative z-10 flex gap-12 md:gap-20 items-center justify-center px-6">
           <img src="/contact-1.png" alt="Contact Icon 1" className="h-16 md:h-20 object-contain" />
@@ -135,7 +143,7 @@ export default function Contact() {
       {/* 2. Main Let's Talk Section with central vertical border line on desktop */}
       <section className="bg-brand-navy py-20 px-6 text-white border-b border-white/5">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start relative">
-          
+
           {/* Left Column */}
           <div className="flex flex-col justify-between h-full lg:pr-12">
             <div>
@@ -167,11 +175,23 @@ export default function Contact() {
           {/* Right Column (Form) */}
           <div className="lg:pl-12 w-full">
             <form onSubmit={handleSubmit} className="space-y-6">
-              
+
+              {/* Honeypot field (hidden from users, traps bots) */}
+              <input
+                type="text"
+                name="_honey"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
+              />
+
               <div>
                 <label className="block text-[10px] font-bold tracking-widest uppercase text-gray-400 mb-2">NAME</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   required
                   value={name}
                   onChange={(e) => {
@@ -187,8 +207,8 @@ export default function Contact() {
 
               <div>
                 <label className="block text-[10px] font-bold tracking-widest uppercase text-gray-400 mb-2">EMAIL ID</label>
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   required
                   value={email}
                   onChange={(e) => {
@@ -204,8 +224,8 @@ export default function Contact() {
 
               <div>
                 <label className="block text-[10px] font-bold tracking-widest uppercase text-gray-400 mb-2">PHONE NUMBER</label>
-                <input 
-                  type="tel" 
+                <input
+                  type="tel"
                   required
                   value={phone}
                   onChange={(e) => {
@@ -221,8 +241,8 @@ export default function Contact() {
 
               <div>
                 <label className="block text-[10px] font-bold tracking-widest uppercase text-gray-400 mb-2">HOW CAN WE HELP YOU?</label>
-                <textarea 
-                  rows={5} 
+                <textarea
+                  rows={5}
                   required
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
@@ -230,15 +250,23 @@ export default function Contact() {
                 ></textarea>
               </div>
 
+              {/* Error banner: only appears if submission actually fails */}
+              {status === 'error' && (
+                <p role="alert" className="text-red-500 text-xs font-semibold">
+                  Something went wrong sending your message. Please try again or email us at{' '}
+                  <a href="mailto:info@glidebrands.in" className="underline">info@glidebrands.in</a>.
+                </p>
+              )}
+
               {/* Legal Note & Button */}
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 pt-4 border-t border-white/10">
                 <p className="text-[10px] text-gray-400 max-w-xs leading-relaxed">
                   We care about the protection of your data. Read our{" "}
                   <Link to="#" className="text-brand-teal hover:underline">privacy policy</Link>
                 </p>
-                
-                <button 
-                  type="submit" 
+
+                <button
+                  type="submit"
                   disabled={status === 'submitting'}
                   className="rounded-full bg-brand-teal px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white transition hover:opacity-90 inline-flex items-center gap-3 shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                 >
@@ -277,11 +305,11 @@ export default function Contact() {
               "/voltalux-logo.png",
               "/tbf-logo.png"
             ].map((src, idx) => (
-              <img 
-                key={idx} 
-                src={src} 
-                alt="Brand Partner Logo" 
-                className="h-7 md:h-9 object-contain filter grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0" 
+              <img
+                key={idx}
+                src={src}
+                alt="Brand Partner Logo"
+                className="h-7 md:h-9 object-contain filter grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0"
               />
             ))}
           </div>
